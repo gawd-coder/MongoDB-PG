@@ -5,9 +5,10 @@ const MarioChar = require("../models/mariochar");
 //we have to describe our tests in mocha
 describe("Finding records",function(){
     //create tests through it blocks. Each it block decribes a single test
+    var char;
     beforeEach(function(done){
         //creating new instance for the database
-        var char = new MarioChar({
+        char = new MarioChar({
             name:"Mario",
         })
         //saving the character to database, as we have already connected to testaroo mongoose knows where to put the database. Also the save is an asynchronous request so we use promise to use assert  
@@ -21,6 +22,13 @@ describe("Finding records",function(){
     it("Finds one record from the database",function(done){
         MarioChar.findOne({name: "Mario"}).then(function(result){
             assert(result.name === "Mario")
+            done();
+        })
+    })
+    it("Finds one record by id from the database",function(done){
+        MarioChar.findOne({_id: char._id}).then(function(result){
+            //these are different kinds of object so we use toString() method
+            assert(result._id.toString() === char._id.toString())
             done();
         })
     })
