@@ -21,4 +21,6 @@ Finding Record by id which we find through Robo3t
 
 Deleting and Updating Records
 
-![image](https://user-images.githubusercontent.com/57283161/82722178-f201cb80-9ce1-11ea-8310-f7aca231b27d.png)
+![image](https://user-images.githubusercontent.com/57283161/82722232-6fc5d700-9ce2-11ea-81cb-7c41f1bbf64f.png)
+
+
